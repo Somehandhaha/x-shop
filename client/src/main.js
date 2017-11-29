@@ -7,7 +7,7 @@ import router from './router'
 // 引入Vuex
 import store from './store'
 // 引入Axios，http请求库
-import axios from 'axios'
+import Axios from 'axios'
 // 引入Vue对于Axios的插件，其实就是给vue的原型上面添加了一个$http变量，以及一个axios变量
 import VueAxios from 'vue-axios'
 // 引入懒加载插件
@@ -27,7 +27,7 @@ import './assets/css/checkout.css'
 import './assets/css/product.css'
 import apiConfig from '../config/api.config'
 // 使用Axios库，实际上就是给vue的实例原型上面添加一个$http和axios属性
-Vue.use(VueAxios, axios)
+Vue.use(VueAxios, Axios)
 // 使用无限滚动插件
 Vue.use(VueInfiniteScroll)
 // 使用懒加载插件，配置加载时的图片
@@ -35,7 +35,7 @@ Vue.use(VueLazyload, {
   loading: 'static/loading-svg/loading-bars.svg',
   try: 3
 })
-axios.defaults.baseURL = apiConfig.baseUrl
+Axios.defaults.baseURL = apiConfig.baseUrl
 // 注册全局的过滤器currency
 Vue.filter('currency', currency)
 // 关闭产品提示，现在在开发环境中
