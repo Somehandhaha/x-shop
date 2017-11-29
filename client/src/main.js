@@ -25,6 +25,7 @@ import './assets/css/base.css'
 import './assets/css/checkout.css'
 // 引入产品的CSS样式
 import './assets/css/product.css'
+import apiConfig from '../config/api.config'
 // 使用Axios库，实际上就是给vue的实例原型上面添加一个$http和axios属性
 Vue.use(VueAxios, axios)
 // 使用无限滚动插件
@@ -34,6 +35,7 @@ Vue.use(VueLazyload, {
   loading: 'static/loading-svg/loading-bars.svg',
   try: 3
 })
+axios.defaults.baseURL = apiConfig.baseUrl
 // 注册全局的过滤器currency
 Vue.filter('currency', currency)
 // 关闭产品提示，现在在开发环境中
